@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hodari Bayingana | Project Management & Real Estate Advisory</title>
+  <meta name="description" content="Hodari Bayingana — Project Management, Investor & Stakeholder Coordination, and Real Estate Contract Oversight. Focused on sustainable, lower-carbon projects. Book a consultation." />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#0f1a2f;
+      --panel2:#111f3a;
+      --text:#eaf0ff;
+      --muted:#b8c4e6;
+      --brand:#66e3c4;
+      --brand2:#7aa7ff;
+      --stroke:rgba(255,255,255,.10);
+      --shadow: 0 16px 40px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 10% 10%, rgba(122,167,255,.20), transparent 60%),
+        radial-gradient(700px 500px at 90% 30%, rgba(102,227,196,.16), transparent 60%),
+        linear-gradient(180deg, var(--bg), #070b14 70%);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(140%) blur(12px);
+      background:rgba(11,18,32,.55);
+      border-bottom:1px solid var(--stroke);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; text-decoration:none;
+      font-weight:700; letter-spacing:.2px;
+    }
+    .mark{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(102,227,196,.95), rgba(122,167,255,.95));
+      box-shadow: 0 10px 28px rgba(102,227,196,.22);
+      display:grid; place-items:center;
+      color:#06101c; font-weight:900;
+    }
+    .nav-links{
+      display:flex; gap:16px; flex-wrap:wrap; justify-content:flex-end;
+      font-size:14px;
+    }
+    .nav-links a{
+      text-decoration:none; color:var(--muted);
+      padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+    }
+    .nav-links a:hover{
+      color:var(--text);
+      border-color: var(--stroke);
+      background: rgba(255,255,255,.03);
+    }
+
+    .hero{padding:56px 0 22px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-main{padding:26px}
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      font-size:13px; color:var(--muted);
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.03);
+      padding:8px 12px;
+      border-radius:999px;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:999px;
+      background: var(--brand);
+      box-shadow: 0 0 0 6px rgba(102,227,196,.14);
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size:42px;
+      line-height:1.1;
+      letter-spacing:-.7px;
+    }
+    @media (max-width: 520px){
+      h1{font-size:34px}
+    }
+    .lead{
+      color:var(--muted);
+      font-size:16px;
+      max-width: 70ch;
+    }
+    .cta-row{
+      display:flex; flex-wrap:wrap; gap:12px;
+      margin-top:18px;
+    }
+    .btn{
+      cursor:pointer;
+      border:none;
+      padding:12px 14px;
+      border-radius:14px;
+      font-weight:700;
+      letter-spacing:.2px;
+      font-size:14px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      transition: transform .08s ease, opacity .2s ease;
+    }
+    .btn:active{transform: translateY(1px)}
+    .btn-primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      color:#06101c;
+    }
+    .btn-ghost{
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      border: 1px solid var(--stroke);
+    }
+    .hero-side{padding:18px}
+    .side-title{
+      font-weight:800;
+      letter-spacing:.2px;
+      margin:4px 0 12px;
+      font-size:14px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .mini{
+      display:grid;
+      gap:10px;
+    }
+    .mini .item{
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--stroke);
+      border-radius: 14px;
+      padding:12px;
+    }
+    .item strong{display:block; font-size:14px; margin-bottom:4px}
+    .item span{color:var(--muted); font-size:13px}
+
+    section{padding:22px 0}
+    .section-title{
+      font-size:22px;
+      letter-spacing:-.3px;
+      margin:0 0 8px;
+    }
+    .section-sub{
+      margin:0 0 18px;
+      color: var(--muted);
+      max-width: 80ch;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+    }
+    @media (max-width: 900px){ .grid-3{grid-template-columns:1fr} }
+
+    .tile{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.03);
+    }
+    .tile h3{margin:2px 0 8px; font-size:16px}
+    .tile p{margin:0; color:var(--muted); font-size:14px}
+
+    .projects{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+    }
+    @media (max-width: 900px){ .projects{grid-template-columns:1fr} }
+
+    .project{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.02));
+    }
+    .badge{
+      display:inline-flex;
+      gap:8px; align-items:center;
+      font-size:12px;
+      color: var(--muted);
+      border:1px solid var(--stroke);
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.02);
+      margin-bottom:10px;
+    }
+    .project h3{margin:0 0 10px; font-size:18px}
+    ul{margin:0; padding-left:18px; color: var(--muted)}
+    li{margin:6px 0}
+
+    .quote{
+      padding:20px;
+      border-radius: var(--radius);
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size:14px;
+    }
+    .quote strong{color:var(--text)}
+    .quote small{display:block; margin-top:8px; color: var(--muted); opacity:.85}
+
+    .form{
+      padding:22px;
+      border-radius: var(--radius);
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.03);
+    }
+    form{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 760px){ form{grid-template-columns:1fr} }
+    label{font-size:13px; color:var(--muted)}
+    input, select, textarea{
+      width:100%;
+      margin-top:6px;
+      padding:12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(7,11,20,.7);
+      color: var(--text);
+      outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    .full{grid-column: 1 / -1}
+    .foot{
+      padding:30px 0 40px;
+      color: var(--muted);
+      font-size:13px;
+      border-top:1px solid var(--stroke);
+      margin-top:22px;
+    }
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      border:1px solid var(--stroke);
+      padding:8px 12px; border-radius:999px;
+      background: rgba(255,255,255,.02);
+      color: var(--muted);
+      font-size:13px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="wrap">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="Home">
+          <div class="mark">HB</div>
+          <div>
+            <div style="font-size:14px; line-height:1.1;">Hodari Bayingana</div>
+            <div style="font-size:12px; color:var(--muted); line-height:1.1;">Project Management • Real Estate Advisory • Sustainability</div>
+          </div>
+        </a>
+
+        <nav class="nav-links" aria-label="Site">
+          <a href="#services">Services</a>
+          <a href="#experience">Experience</a>
+          <a href="#sustainability">Carbon Focus</a>
+          <a href="#consultation">Book</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top" class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="card hero-main">
+          <div class="kicker"><span class="dot"></span>Professional oversight for high-stakes builds & property contracts</div>
+          <h1>Trusted project leadership for hotels, properties, and institutional partnerships.</h1>
+          <p class="lead">
+            Hodari Bayingana is a calm, reliable project manager and stakeholder liaison with experience managing
+            hotel developments in Rwanda and overseeing real estate properties leased by banks and corporate tenants.
+            Today, his work increasingly prioritizes <strong>reducing carbon footprint</strong> through smarter planning and delivery.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#consultation">Book a Consultation →</a>
+            <a class="btn btn-ghost" href="#experience">View Experience</a>
+          </div>
+
+          <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:10px;">
+            <span class="pill">Investor & stakeholder coordination</span>
+            <span class="pill">Contract & property oversight</span>
+            <span class="pill">On-time, on-budget delivery mindset</span>
+          </div>
+        </div>
+
+        <aside class="card hero-side">
+          <div class="side-title">What clients get</div>
+          <div class="mini">
+            <div class="item">
+              <strong>Calm leadership</strong>
+              <span>Steady execution and clear decision-making—even under pressure.</span>
+            </div>
+            <div class="item">
+              <strong>Professional communication</strong>
+              <span>Effective meetings with investors, owners, vendors, and corporate stakeholders.</span>
+            </div>
+            <div class="item">
+              <strong>Risk-aware planning</strong>
+              <span>Practical systems that reduce delays, surprises, and cost overruns.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <h2 class="section-title">Services</h2>
+      <p class="section-sub">
+        Structured, professional support for companies and owners who need dependable execution, clear reporting, and smooth stakeholder alignment.
+      </p>
+
+      <div class="grid-3">
+        <div class="tile">
+          <h3>Project Management</h3>
+          <p>Scope planning, timelines, coordination, and delivery support for hotel and property projects—built around clarity and accountability.</p>
+        </div>
+        <div class="tile">
+          <h3>Investor & Stakeholder Meetings</h3>
+          <p>Confident facilitation for funding conversations: aligning investor expectations, communicating progress, and building trust.</p>
+        </div>
+        <div class="tile">
+          <h3>Real Estate Contract Oversight</h3>
+          <p>Management support for contracts between companies and property owners—including leased assets used by banks and corporate tenants.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE / PROJECTS -->
+    <section id="experience">
+      <h2 class="section-title">Selected Experience</h2>
+      <p class="section-sub">
+        A concept portfolio section you can expand later with photos, timelines, and testimonials.
+      </p>
+
+      <div class="projects">
+        <div class="project">
+          <div class="badge">Hotel Development • Rwanda</div>
+          <h3>Golden Tulip (Rwanda) — Project Management</h3>
+          <ul>
+            <li>Led project coordination with a focus on schedule discipline and stakeholder alignment.</li>
+            <li>Supported cross-team communication: owners, contractors, and operational stakeholders.</li>
+            <li>Maintained professional reporting and meeting structure to keep execution clear and predictable.</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="badge">Hotel Development • Rwanda</div>
+          <h3>Second Hotel Project — Project Management</h3>
+          <ul>
+            <li>Managed a second high-quality hotel project in Rwanda (details can be added when ready).</li>
+            <li>Experienced in investor-facing communication and progress updates.</li>
+            <li>Focused on reliability, calm leadership, and consistent follow-through.</li>
+          </ul>
+          <p style="margin-top:10px; color:var(--muted); font-size:13px;">
+            Tip: When you get the name + 2–3 details, we’ll replace this with a polished case study.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top:16px" class="quote">
+        <strong>Positioning statement (for big clients):</strong><br/>
+        “A disciplined project manager and contract liaison who bridges owners, companies, and investors—delivering with calm leadership, respect, and reliable execution.”
+        <small>— Placeholders can be swapped with real testimonials later.</small>
+      </div>
+    </section>
+
+    <!-- SUSTAINABILITY -->
+    <section id="sustainability">
+      <h2 class="section-title">Reducing Carbon Footprint</h2>
+      <p class="section-sub">
+        Hodari’s new projects prioritize lower-emission delivery by combining practical efficiency with sustainability-minded planning.
+      </p>
+
+      <div class="grid-3">
+        <div class="tile">
+          <h3>Efficiency-first planning</h3>
+          <p>Reducing energy waste through better scopes, smarter systems, and early decisions that avoid costly rework.</p>
+        </div>
+        <div class="tile">
+          <h3>Lower-carbon materials (where feasible)</h3>
+          <p>Supporting selections that reduce embodied carbon while maintaining quality, safety, and budget realities.</p>
+        </div>
+        <div class="tile">
+          <h3>Operational sustainability</h3>
+          <p>Planning for long-term efficiency: HVAC strategy, lighting approaches, and practical renewables when appropriate.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="consultation">
+      <h2 class="section-title">Book a Consultation</h2>
+      <p class="section-sub">
+        Use this form to request a call. For a concept site, the form can either open an email draft or connect to a form service later.
+      </p>
+
+      <div class="form">
+        <!--
+          OPTION A (no backend): mailto-based submit via JS (default below)
+          OPTION B (recommended later): replace form action with Formspree / Getform / your own API endpoint
+        -->
+        <form id="consultForm">
+          <div>
+            <label>Full Name
+              <input name="name" type="text" placeholder="Jane Smith" required />
+            </label>
+          </div>
+          <div>
+            <label>Company / Organization
+              <input name="company" type="text" placeholder="ABC Holdings / Bank / Developer" />
+            </label>
+          </div>
+          <div>
+            <label>Email
+              <input name="email" type="email" placeholder="jane@company.com" required />
+            </label>
+          </div>
+          <div>
+            <label>Phone (optional)
+              <input name="phone" type="tel" placeholder="+1 (555) 123-4567" />
+            </label>
+          </div>
+
+          <div>
+            <label>Consultation Type
+              <select name="type">
+                <option>Project Management</option>
+                <option>Investor / Stakeholder Coordination</option>
+                <option>Contract / Property Oversight</option>
+                <option>Sustainability / Carbon Reduction Planning</option>
+                <option>Other</option>
+              </select>
+            </label>
+          </div>
+
+          <div>
+            <label>Preferred Time Window
+              <select name="timewindow">
+                <option>Weekday mornings</option>
+                <option>Weekday afternoons</option>
+                <option>Weekday evenings</option>
+                <option>Flexible</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="full">
+            <label>Project Summary
+              <textarea name="message" placeholder="Tell us what you’re building / managing, your timeline, and what support you need." required></textarea>
+            </label>
+          </div>
+
+          <div class="full" style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+            <button class="btn btn-primary" type="submit">Request Consultation →</button>
+            <button class="btn btn-ghost" type="button" id="copyBtn">Copy Message</button>
+            <span style="color:var(--muted); font-size:13px;">No spam. Professional follow-up only.</span>
+          </div>
+        </form>
+
+        <div id="status" style="margin-top:12px; color:var(--muted); font-size:13px;"></div>
+        <p style="margin-top:10px; color:var(--muted); font-size:12px;">
+          Replace <strong>EMAIL_PLACEHOLDER</strong> below with Hodari’s real business email when you have it.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="foot">
+      <div style="display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;">
+        <div>
+          <strong style="color:var(--text)">Hodari Bayingana</strong><br/>
+          Project Management • Real Estate Advisory • Sustainability Focus
+        </div>
+        <div style="text-align:right;">
+          <span style="opacity:.8;">© <span id="year"></span> • Concept website</span><br/>
+          <span style="opacity:.8;">Built for professional outreach & consultation booking</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // === CONFIG ===
+    // Replace this with your dad's real email later:
+    const CONTACT_EMAIL = "EMAIL_PLACEHOLDER@domain.com";
+
+    const form = document.getElementById("consultForm");
+    const status = document.getElementById("status");
+    const copyBtn = document.getElementById("copyBtn");
+
+    function buildEmailBody(data){
+      return [
+        `Name: ${data.get("name")}`,
+        `Company: ${data.get("company") || "-"}`,
+        `Email: ${data.get("email")}`,
+        `Phone: ${data.get("phone") || "-"}`,
+        `Consultation Type: ${data.get("type")}`,
+        `Preferred Time Window: ${data.get("timewindow")}`,
+        "",
+        "Project Summary:",
+        data.get("message"),
+        "",
+        "— Sent from HodariBayingana.com (concept site)"
+      ].join("\n");
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      const subject = encodeURIComponent(`Consultation Request — ${data.get("name")} (${data.get("type")})`);
+      const body = encodeURIComponent(buildEmailBody(data));
+
+      // mailto: (no backend required)
+      const mailto = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+
+      status.textContent = "Opening your email app… If it doesn’t open, click “Copy Message” and send manually.";
+      window.location.href = mailto;
+    });
+
+    copyBtn.addEventListener("click", async () => {
+      const data = new FormData(form);
+      const text = buildEmailBody(data);
+      try{
+        await navigator.clipboard.writeText(text);
+        status.textContent = "Copied. Paste it into an email or message to send.";
+      }catch(err){
+        status.textContent = "Copy failed in this browser. Manually select the text inside the fields and copy.";
+      }
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
