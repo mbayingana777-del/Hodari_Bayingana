@@ -1,595 +1,225 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hodari Bayingana | Project Management & Commercial Real Estate Oversight</title>
-  <meta name="description" content="Hodari Bayingana — Project Management, Investor Coordination, and Commercial Lease/Contract Oversight. Book a consultation." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hodari Bayingana | Commercial Real Estate & Project Advisory</title>
 
   <style>
-    :root{
-      --bg:#070b14;
-      --panel: rgba(255,255,255,.05);
-      --panel2: rgba(255,255,255,.035);
-      --stroke: rgba(255,255,255,.12);
-      --text:#eaf0ff;
-      --muted: rgba(234,240,255,.78);
-      --muted2: rgba(234,240,255,.62);
-      --brand1:#66e3c4;
-      --brand2:#7aa7ff;
-      --shadow: 0 18px 55px rgba(0,0,0,.45);
-      --radius: 18px;
-      --max: 1120px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Helvetica Neue", Arial, sans-serif;
     }
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color:var(--text);
-      background:
-        radial-gradient(800px 520px at 15% 10%, rgba(122,167,255,.18), transparent 55%),
-        radial-gradient(740px 520px at 85% 25%, rgba(102,227,196,.15), transparent 55%),
-        linear-gradient(180deg, var(--bg), #050711 70%);
-      line-height:1.5;
+    body {
+      color: #ffffff;
+      background-color: #0f172a;
     }
 
-    a{ color:inherit; }
-    .wrap{ max-width: var(--max); margin:0 auto; padding: 0 20px; }
-
-    /* NAV */
-    .nav{
-      position:sticky;
-      top:0;
-      z-index: 50;
-      backdrop-filter: blur(12px) saturate(140%);
-      background: rgba(7,11,20,.55);
-      border-bottom: 1px solid var(--stroke);
-    }
-    .nav-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding: 14px 0;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      font-weight: 800;
-      letter-spacing:.2px;
-      white-space: nowrap;
-    }
-    .mark{
-      width: 40px; height: 40px;
-      border-radius: 14px;
-      display:grid; place-items:center;
-      color:#06101c;
-      font-weight: 900;
-      background: linear-gradient(135deg, var(--brand1), var(--brand2));
-      box-shadow: 0 12px 34px rgba(102,227,196,.20);
-    }
-    .nav-links{
-      display:flex;
-      gap:10px;
-      flex-wrap: wrap;
-      justify-content:flex-end;
-      font-size: 14px;
-    }
-    .nav-links a{
-      text-decoration:none;
-      color: var(--muted);
-      padding: 8px 10px;
-      border-radius: 12px;
-      border: 1px solid transparent;
-    }
-    .nav-links a:hover{
-      color: var(--text);
-      background: rgba(255,255,255,.03);
-      border-color: var(--stroke);
-    }
-
-    /* BUTTONS */
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      font-weight: 800;
-      letter-spacing:.2px;
-      border-radius: 14px;
-      padding: 12px 16px;
-      text-decoration:none;
-      border: 1px solid transparent;
-      cursor:pointer;
-      transition: transform .08s ease, opacity .2s ease;
-      user-select:none;
-    }
-    .btn:active{ transform: translateY(1px); }
-    .btn-primary{
-      background: linear-gradient(135deg, var(--brand1), var(--brand2));
-      color:#06101c;
-    }
-    .btn-ghost{
-      background: rgba(255,255,255,.05);
-      border-color: var(--stroke);
-      color: var(--text);
-    }
-
-    /* HERO */
-    .hero{
-      min-height: 86vh;
-      display:flex;
-      align-items: center;
+    /* HERO SECTION */
+    .hero {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
       position: relative;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      background:
-        linear-gradient(180deg, rgba(5,10,20,.55), rgba(5,10,20,.88)),
-        url("assets/kigali-hero.jpg") center / cover no-repeat;
-    }
-    .hero-inner{
-      padding: 64px 0;
-      max-width: 860px;
-    }
-    .eyebrow{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      font-size: 12px;
-      letter-spacing: .10em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.82);
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(0,0,0,.22);
-      padding: 8px 12px;
-      border-radius: 999px;
-      backdrop-filter: blur(10px);
-    }
-    .dot{
-      width:8px; height:8px; border-radius:999px;
-      background: var(--brand1);
-      box-shadow: 0 0 0 6px rgba(102,227,196,.15);
-    }
-    h1{
-      margin: 14px 0 12px;
-      font-size: 52px;
-      line-height: 1.04;
-      letter-spacing: -.9px;
-    }
-    @media (max-width: 560px){
-      h1{ font-size: 40px; }
-      .hero-inner{ padding: 46px 0; }
-    }
-    .hero-lead{
-      margin: 0 0 18px;
-      color: rgba(255,255,255,.86);
-      font-size: 17px;
-      max-width: 72ch;
-    }
-    .hero-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 16px; }
-
-    /* TRUST STRIP */
-    .trust{
-      margin-top: 22px;
-      display:flex;
-      flex-wrap: wrap;
-      gap:10px;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 9px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(0,0,0,.18);
-      color: rgba(255,255,255,.82);
-      font-size: 13px;
-      backdrop-filter: blur(10px);
+      transition: background-image 1.5s ease-in-out;
     }
 
-    /* SECTIONS */
-    section{ padding: 44px 0; }
-    .section-title{
-      margin:0 0 10px;
-      font-size: 24px;
-      letter-spacing: -.4px;
-    }
-    .section-sub{
-      margin:0 0 18px;
-      color: var(--muted);
-      max-width: 85ch;
+    .overlay {
+      background: rgba(0, 0, 0, 0.65);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
     }
 
-    .grid-3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    @media (max-width: 900px){
-      .grid-3{ grid-template-columns: 1fr; }
+    .hero-content {
+      max-width: 900px;
     }
 
-    .card{
-      background: var(--panel);
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px;
-    }
-    .card h3{ margin: 2px 0 8px; font-size: 16px; }
-    .card p{ margin: 0; color: var(--muted); font-size: 14px; }
-
-    /* PROJECTS */
-    .projects{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    @media (max-width: 900px){
-      .projects{ grid-template-columns: 1fr; }
-    }
-    .badge{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      font-size: 12px;
-      color: var(--muted);
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.03);
-      padding: 6px 10px;
-      border-radius: 999px;
-      margin-bottom: 10px;
-    }
-    ul{ margin: 0; padding-left: 18px; color: var(--muted); }
-    li{ margin: 6px 0; }
-
-    /* PROCESS */
-    .steps{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 16px;
-    }
-    @media (max-width: 900px){
-      .steps{ grid-template-columns: 1fr; }
-    }
-    .stepnum{
-      width:34px; height:34px;
-      border-radius: 12px;
-      display:grid; place-items:center;
-      font-weight: 900;
-      color:#06101c;
-      background: linear-gradient(135deg, var(--brand1), var(--brand2));
-      margin-bottom: 10px;
+    .hero h1 {
+      font-size: 3.2rem;
+      margin-bottom: 20px;
+      font-weight: 600;
     }
 
-    /* BOOKING */
-    .book-wrap{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 16px;
-      align-items: start;
-    }
-    @media (max-width: 980px){
-      .book-wrap{ grid-template-columns: 1fr; }
-    }
-    .cal-box{
-      overflow:hidden;
-      border-radius: var(--radius);
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.03);
-    }
-    .form{
-      background: var(--panel2);
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius);
-      padding: 18px;
-    }
-    label{
-      font-size: 13px;
-      color: var(--muted);
-      display:block;
-      margin-bottom: 10px;
-    }
-    input, textarea{
-      width:100%;
-      margin-top: 6px;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.25);
-      color: var(--text);
-      outline: none;
-    }
-    textarea{ min-height: 120px; resize: vertical; }
-    .note{
-      color: var(--muted2);
-      font-size: 12px;
-      margin-top: 10px;
+    .hero h2 {
+      font-size: 1.4rem;
+      font-weight: 300;
+      margin-bottom: 30px;
+      color: #cbd5e1;
     }
 
-    /* FOOTER */
-    .footer{
-      padding: 32px 0 44px;
-      border-top: 1px solid rgba(255,255,255,.10);
-      color: var(--muted);
-      font-size: 13px;
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      line-height: 1.6;
+      color: #e5e7eb;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 15px 35px;
+      background-color: #1e40af;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .cta:hover {
+      background-color: #1e3a8a;
+    }
+
+    /* SECTION STYLING */
+    section {
+      padding: 90px 20px;
+      background-color: #020617;
+      text-align: center;
+    }
+
+    section h3 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    section p {
+      max-width: 850px;
+      margin: auto;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #cbd5e1;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .service-box {
+      background-color: #020617;
+      border: 1px solid #1e293b;
+      padding: 30px;
+      border-radius: 6px;
+    }
+
+    .service-box h4 {
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+
+    footer {
+      background-color: #020617;
+      padding: 30px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #94a3b8;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <header class="nav">
-    <div class="wrap">
-      <div class="nav-inner">
-        <a class="brand" href="#top">
-          <span class="mark">HB</span>
-          <span>Hodari Bayingana</span>
-        </a>
-
-        <nav class="nav-links" aria-label="Site">
-          <a href="#capabilities">Capabilities</a>
-          <a href="#experience">Experience</a>
-          <a href="#sustainability">Sustainability</a>
-          <a href="#book">Book</a>
-        </nav>
-      </div>
-    </div>
-  </header>
-
   <!-- HERO -->
-  <main id="top" class="hero">
-    <div class="wrap">
-      <div class="hero-inner">
-        <div class="eyebrow"><span class="dot"></span>Commercial Real Estate • Project Management • Kigali</div>
-
+  <div class="hero" id="hero">
+    <div class="overlay">
+      <div class="hero-content">
         <h1>Hodari Bayingana</h1>
-
-        <p class="hero-lead">
-          Commercial real estate oversight and project leadership for owners, corporate tenants, and stakeholders.
-          Experienced in managing hotel developments in Rwanda, coordinating investor-facing meetings, and supporting
-          institutional lease/contract relationships—including assets leased to banking and corporate tenants.
-          <br><br>
-          Current focus: <strong>reducing carbon footprint</strong> through disciplined planning, efficient delivery, and sustainability-minded decisions.
+        <h2>Commercial Real Estate & Project Management Advisor — Rwanda</h2>
+        <p>
+          Advising banks and institutional clients on the leasing, management,
+          and delivery of high-value commercial properties across Rwanda.
         </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#book">Book a Consultation →</a>
-          <a class="btn btn-ghost" href="#capabilities">View Capabilities</a>
-        </div>
-
-        <div class="trust" aria-label="Trust signals">
-          <span class="pill">Calm, reliable leadership</span>
-          <span class="pill">Stakeholder & investor coordination</span>
-          <span class="pill">Contract & lease oversight</span>
-          <span class="pill">Sustainability-forward delivery</span>
-        </div>
+        <a href="#consultation" class="cta">Schedule a Confidential 30-Minute Consultation</a>
       </div>
     </div>
-  </main>
-
-  <!-- CAPABILITIES -->
-  <section id="capabilities">
-    <div class="wrap">
-      <h2 class="section-title">Core Capabilities</h2>
-      <p class="section-sub">
-        Professional support designed for serious decision-makers: clear communication, disciplined execution, and predictable outcomes.
-      </p>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>Project Management</h3>
-          <p>Structured scope, timelines, coordination, and reporting—built to protect quality while reducing delay and rework.</p>
-        </div>
-
-        <div class="card">
-          <h3>Investor & Stakeholder Meetings</h3>
-          <p>Clear, confident facilitation for funding conversations, progress updates, and alignment between owners and partners.</p>
-        </div>
-
-        <div class="card">
-          <h3>Commercial Lease & Contract Oversight</h3>
-          <p>Support for agreements between property owners and corporate tenants—helping protect relationships, obligations, and performance.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
 
   <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="wrap">
-      <h2 class="section-title">Selected Experience</h2>
-      <p class="section-sub">
-        A concept portfolio you can expand later with dates, photos, and quantified outcomes.
-      </p>
+  <section>
+    <h3>Proven Institutional Experience</h3>
+    <p>
+      Hodari Bayingana has served as project manager for multiple high-profile hotel
+      developments in Rwanda, including internationally branded properties.
+      His experience includes managing bank-leased commercial buildings,
+      coordinating investors, and ensuring projects are delivered with
+      precision, discretion, and long-term value.
+    </p>
+  </section>
 
-      <div class="projects">
-        <div class="card">
-          <div class="badge">Hotel Development • Rwanda</div>
-          <h3 style="margin:0 0 10px;">Golden Tulip — Project Manager</h3>
-          <ul>
-            <li>Coordinated teams and stakeholders with a disciplined reporting cadence.</li>
-            <li>Maintained professional meeting structure and execution clarity.</li>
-            <li>Supported delivery focus: quality, predictability, and stakeholder confidence.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="badge">Hotel Development • Rwanda</div>
-          <h3 style="margin:0 0 10px;">Second Hotel Project — Project Manager</h3>
-          <ul>
-            <li>Managed a second high-quality hotel project in Rwanda (details can be added when ready).</li>
-            <li>Experienced with investor-facing communication and funding-alignment meetings.</li>
-            <li>Known for calm leadership and reliable follow-through in business environments.</li>
-          </ul>
-          <p class="note">When you share the hotel name + 2–3 facts, I’ll convert this into a polished case study.</p>
-        </div>
+  <!-- SERVICES -->
+  <section>
+    <h3>Advisory Services</h3>
+    <div class="services">
+      <div class="service-box">
+        <h4>Bank & Institutional Leasing Advisory</h4>
+        <p>
+          Strategic guidance for banks leasing office space,
+          including negotiations, coordination with owners,
+          and risk-aware commercial structuring.
+        </p>
+      </div>
+      <div class="service-box">
+        <h4>Project Management</h4>
+        <p>
+          End-to-end oversight of commercial and hospitality projects,
+          managing contractors, timelines, budgets, and stakeholders.
+        </p>
+      </div>
+      <div class="service-box">
+        <h4>Sustainable Development</h4>
+        <p>
+          Advisory focused on reducing carbon footprint through
+          efficient materials, energy-aware design, and long-term asset sustainability.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- PROCESS -->
-  <section id="how">
-    <div class="wrap">
-      <h2 class="section-title">How I Work</h2>
-      <p class="section-sub">
-        A simple process that executives and owners prefer: clarity first, then consistent execution.
-      </p>
-
-      <div class="steps">
-        <div class="card">
-          <div class="stepnum">1</div>
-          <h3>Assess & Align</h3>
-          <p>Understand scope, stakeholders, and constraints. Define what “success” must look like for ownership and tenants.</p>
-        </div>
-        <div class="card">
-          <div class="stepnum">2</div>
-          <h3>Plan & De-risk</h3>
-          <p>Build a practical plan: milestones, communications, accountability, and early risk controls to prevent surprises.</p>
-        </div>
-        <div class="card">
-          <div class="stepnum">3</div>
-          <h3>Execute & Report</h3>
-          <p>Run steady execution with professional updates—so decisions stay fast, and outcomes remain predictable.</p>
-        </div>
-      </div>
-
-      <div style="margin-top:18px;">
-        <a class="btn btn-primary" href="#book">Book a Consultation →</a>
-        <a class="btn btn-ghost" href="#capabilities" style="margin-left:8px;">Review Capabilities</a>
-      </div>
-    </div>
+  <!-- CONSULTATION -->
+  <section id="consultation">
+    <h3>Schedule a Confidential Consultation</h3>
+    <p>
+      Book a 30-minute introductory call to discuss commercial leasing,
+      institutional property requirements, or project oversight in Rwanda.
+    </p>
+    <br><br>
+    <a href="#" class="cta">Book 30-Minute Introductory Call</a>
   </section>
 
-  <!-- SUSTAINABILITY -->
-  <section id="sustainability">
-    <div class="wrap">
-      <h2 class="section-title">Reducing Carbon Footprint</h2>
-      <p class="section-sub">
-        Sustainability must be practical. The goal is lower emissions without sacrificing safety, quality, or budget realities.
-      </p>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>Efficiency-first planning</h3>
-          <p>Smarter scopes and early decisions that reduce energy waste and eliminate expensive rework.</p>
-        </div>
-
-        <div class="card">
-          <h3>Lower-carbon delivery choices</h3>
-          <p>Support for materials and systems that reduce embodied carbon where feasible and appropriate.</p>
-        </div>
-
-        <div class="card">
-          <h3>Operational performance mindset</h3>
-          <p>Long-term thinking: efficiency in HVAC, lighting, and operational strategy, including renewables when suitable.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BOOK -->
-  <section id="book">
-    <div class="wrap">
-      <h2 class="section-title">Book a Consultation</h2>
-      <p class="section-sub">
-        Select a time that works. You’ll receive confirmation automatically. If you prefer, use the message form.
-      </p>
-
-      <div class="book-wrap">
-
-        <!-- Calendly Embed -->
-        <div class="cal-box">
-          <div class="calendly-inline-widget"
-               data-url="https://calendly.com/YOUR-USERNAME/consultation"
-               style="min-width:320px;height:760px;">
-          </div>
-        </div>
-
-        <!-- Fallback Message Form -->
-        <div class="form">
-          <h3 style="margin:0 0 10px;">Prefer a message first?</h3>
-          <p style="margin:0 0 14px; color: var(--muted); font-size: 14px;">
-            Send a short overview and you’ll receive a professional follow-up.
-          </p>
-
-          <form id="contactForm">
-            <label>
-              Your Name
-              <input name="name" required placeholder="Jane Smith" />
-            </label>
-            <label>
-              Company / Organization
-              <input name="company" placeholder="Bank / Corporate / Owner / Developer" />
-            </label>
-            <label>
-              Email
-              <input name="email" type="email" required placeholder="jane@company.com" />
-            </label>
-            <label>
-              What do you need support with?
-              <textarea name="message" required placeholder="Tell us the project or lease situation, timeline, and what outcome you want."></textarea>
-            </label>
-
-            <button class="btn btn-primary" type="submit">Send Message →</button>
-            <p class="note" id="status"></p>
-          </form>
-
-          <p class="note">
-            Replace the Calendly link above and/or update the email destination in the script below.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="wrap" style="display:flex; gap:18px; justify-content:space-between; flex-wrap:wrap;">
-      <div>
-        <strong style="color:var(--text);">Hodari Bayingana</strong><br/>
-        Project Management • Commercial Real Estate Oversight • Sustainability Focus
-      </div>
-      <div style="text-align:right;">
-        © <span id="year"></span> • Concept website
-      </div>
-    </div>
+  <footer>
+    © 2026 Hodari Bayingana | Commercial Advisory — Rwanda
   </footer>
 
-  <!-- Calendly Script -->
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-  <!-- Fallback form script (mailto) -->
+  <!-- BACKGROUND IMAGE ROTATION -->
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    const images = [
+      "assets/kigali1.jpg",
+      "assets/kigali2.jpg",
+      "assets/kigali3.jpg"
+    ];
 
-    const EMAIL_TO = "hodari@email.com"; // <-- change this later
-    const form = document.getElementById("contactForm");
-    const status = document.getElementById("status");
+    let index = 0;
+    const hero = document.getElementById("hero");
 
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
+    function rotateImages() {
+      hero.style.backgroundImage = `url('${images[index]}')`;
+      index = (index + 1) % images.length;
+    }
 
-      const subject = encodeURIComponent("Consultation Request — " + data.get("name"));
-      const body = encodeURIComponent(
-        `Name: ${data.get("name")}\n` +
-        `Company: ${data.get("company") || "-"}\n` +
-        `Email: ${data.get("email")}\n\n` +
-        `Message:\n${data.get("message")}\n\n` +
-        `— Sent from Hodari Bayingana website`
-      );
-
-      const mailto = `mailto:${EMAIL_TO}?subject=${subject}&body=${body}`;
-
-      status.textContent = "Opening your email app… If nothing happens, copy your message and email it manually.";
-      window.location.href = mailto;
-    });
+    rotateImages();
+    setInterval(rotateImages, 6000);
   </script>
+
+</body>
+</html>
+
 </body>
 </html>
